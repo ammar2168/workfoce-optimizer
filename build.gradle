@@ -1,0 +1,36 @@
+
+
+group 'optimizer'
+version '1.0-SNAPSHOT'
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")       
+        
+    }
+}
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+    compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.5.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
